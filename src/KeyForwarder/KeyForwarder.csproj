@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\KeyForwarder.Core\KeyForwarder.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\app.ico" LogicalName="KeyForwarder.Assets.app.ico" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWindowsForms>true</UseWindowsForms>
+    <StartupObject>KeyForwarder.Program</StartupObject>
+    <AssemblyName>KeyForwarder</AssemblyName>
+    <RootNamespace>KeyForwarder</RootNamespace>
+    <Version>1.0.1</Version>
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+    <Description>Type clipboard contents into the focused window via SendInput (for remote desktops that block paste).</Description>
+
+    <!-- Publish defaults: true single-file (native libs bundled and compressed).
+         Pass RID win-x64 and SelfContained=true on the publish command (see README).
+         WinForms is not trim-compatible (NETSDK1175), so size comes from compression. -->
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <CopyOutputSymbolsToPublishDirectory>false</CopyOutputSymbolsToPublishDirectory>
+  </PropertyGroup>
+
+</Project>
